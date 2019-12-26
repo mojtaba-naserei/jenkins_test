@@ -12,7 +12,7 @@ job('DSL-with-docker') {
       dockerBuildAndPublish {
             repositoryName('mojtabanaserei/jenkins')
             tag('${GIT_REVISION,length=7}')
-            registryCredentials('dockerhub')
+            registryCredentials('dockerhub') // credentials id
             forcePull(false)
             createFingerprints(false)
             skipDecorate()
