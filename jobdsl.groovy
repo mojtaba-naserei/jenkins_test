@@ -1,6 +1,6 @@
 job('DSL-Tutorial-1-Test') {
     scm {
-        git('git@github.com:contentful/the-example-app.nodejs.git')
+        git('git://github.com/contentful/the-example-app.nodejs.git')
     }
     triggers {
         scm('H/15 * * * *')
