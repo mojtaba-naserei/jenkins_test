@@ -20,4 +20,5 @@ job('DSL-with-docker') {
             createFingerprints(false)
             skipDecorate()
         }
+    }
 }
