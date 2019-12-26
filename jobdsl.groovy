@@ -14,7 +14,7 @@ job('DSL-with-docker') {
     steps {
       dockerBuildAndPublish {
             repositoryName('mojtabanaserei/jenkins')
-            tag('${BUILD_TIMESTAMP}-${GIT_REVISION,length=7}')
+            tag('${GIT_REVISION,length=7}')
             registryCredentials('docker-hub')
             forcePull(false)
             createFingerprints(false)
