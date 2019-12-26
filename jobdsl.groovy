@@ -1,4 +1,4 @@
-job('DSL-Tutorial-1-Test') {
+job('DSL-with-docker') {
     scm {
         git('git://github.com/contentful/the-example-app.nodejs.git', 'master') { node ->
             node / gitConfigName('mojtaba job dsl')
@@ -12,6 +12,12 @@ job('DSL-Tutorial-1-Test') {
        nodejs('nodejs8')
     }
     steps {
-        shell('npm install')   
-    }
+      dockerBuildAndPublish {
+            repositoryName('mojtabanaserei/jenkins')
+            tag('${BUILD_TIMESTAMP}-${GIT_REVISION,length=7}')
+            registryCredentials('docker-hub')
+            forcePull(false)
+            createFingerprints(false)
+            skipDecorate()
+        }
 }
