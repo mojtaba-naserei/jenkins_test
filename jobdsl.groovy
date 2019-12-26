@@ -14,6 +14,7 @@ job('DSL-with-docker') {
             tag('${GIT_REVISION,length=7}')
             registryCredentials('dockerhub') // credentials id
             forcePull(false)
+            forceTag(false)
             createFingerprints(false)
             skipDecorate()
         }
