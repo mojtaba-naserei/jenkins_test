@@ -8,9 +8,6 @@ job('DSL-with-docker') {
     triggers {
         scm('H/15 * * * *')
     }
-    wrappers { 
-       nodejs('nodejs8')
-    }
     steps {
       dockerBuildAndPublish {
             repositoryName('mojtabanaserei/jenkins')
